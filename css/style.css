@@ -782,7 +782,9 @@ a { color: inherit; }
 
 @media (max-width: 1023px) {
   .nav { display: none; }
-  .header__side { margin-left: auto; }
+  /* Тот же селектор, что и базовое правило: иначе .nav + .header__side
+     перебивает по специфичности и группа прижимается влево */
+  .nav + .header__side { margin-left: auto; }
   .burger { display: flex; }
 }
 
